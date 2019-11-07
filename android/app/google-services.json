@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "240369645776",
+    "firebase_url": "https://embee-faa61.firebaseio.com",
+    "project_id": "embee-faa61",
+    "storage_bucket": "embee-faa61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240369645776:android:1fccbc060ca47e9bed86d5",
+        "android_client_info": {
+          "package_name": "com.embee.embee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240369645776-uebuh67suo94uthb1ifa2ilk9fhsaetr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.embee.embee",
+            "certificate_hash": "216a022a9fb7315a9c40599067ef9e767118c150"
+          }
+        },
+        {
+          "client_id": "240369645776-2rfabldttpkvmsbn4vtmcru391ao6edp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvKJwt2de5G2KJoZHFj8hTbVVaThrA_7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240369645776-2rfabldttpkvmsbn4vtmcru391ao6edp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
