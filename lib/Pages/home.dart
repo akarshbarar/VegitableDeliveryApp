@@ -1,4 +1,3 @@
-
 import 'package:embee/Pages/aboutus.dart';
 import 'package:embee/Pages/alreadybooked.dart';
 import 'package:embee/Pages/cart.dart';
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     quantity=List();
     foodItem=FoodItem(hotel: "", imgUrl: "null", title: "null", price: 0, id: 0, quantity: 0);
     ref= _database.reference().child("FoodItems");
-    myref=_database.reference().child("Orders");
+    myref=_database.reference().child("Order");
   
     ref.onChildAdded.listen(_onEntryChanged);
     ref.onChildChanged.listen(_onEntryChanged);
@@ -214,16 +213,30 @@ Future<bool> _onWillPop() {
                           color: Colors.transparent,
                           child: InkWell(
                             onTap: (){
-                              Navigator.of(context).push(
-                                 MaterialPageRoute(
-                                   builder: (context){
-                                     return CartIndex(
-                                       foodItems: foodItems,
-                                       quantity: quantity,
-                                     );
-                                   }
-                                 ),
-                               );
+                              if(checkEmpty()){
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context){
+                                        return CartIndex(
+                                          foodItems: foodItems,
+                                          quantity: quantity,
+                                        );
+                                      }
+                                  ),
+                                );
+                              }
+                              else{
+                                Fluttertoast.showToast(
+                                    msg: "Empty List cannot be added to cart",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIos: 1,
+                                    backgroundColor: Colors.red,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0
+                                );
+                              }
+
                             },
                             child: Center(
                               child: Text("Move To Cart",
@@ -386,6 +399,15 @@ Future<bool> _onWillPop() {
           // ),
         ),
       );
+  }
+
+  bool checkEmpty() {
+    for(var i=0;i<quantity.length;i++){
+      if(quantity[i]>0){
+        return true;
+      }
+    }
+    return false;
   }
 
 

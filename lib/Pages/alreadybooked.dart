@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 class AlreadyBooked extends StatefulWidget {
@@ -34,12 +35,19 @@ class _AlreadyBookedState extends State<AlreadyBooked> {
       child: Scaffold(
         body: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("You have already booked a item."),
-              Text("Please wait till the item is delivered to you."),
-              Text("You will be able to resume booking once the items are delivered to you.")
+              Text("You have already booked a item.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0,),),
+              Text("Please wait till the item is delivered to you.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0,),),
+              Text("You will be able to resume booking once the items are delivered to you.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0,),),
+              Container(
+                height: 400.0,
+                width: 400.0,
+                child: FlareActor(
+                  "assets/Waiting.flr",
+                  animation: "play",
+                ),
+              ),
             ],
           ),
         ),
